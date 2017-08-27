@@ -1,0 +1,31 @@
+{
+  "name": "polymer-with-es7-and-autoprefixer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "serve": "polymer serve",
+    "serve:build": "polymer serve build/",
+    "build": "gulp build"
+  },
+  "author": "jilow",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.26.0",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-posthtml": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "polymer-build": "^2.0.0",
+    "posthtml-postcss": "^0.2.5"
+  }
+}

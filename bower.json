@@ -1,0 +1,21 @@
+{
+  "name": "polymer-with-es7-and-autoprefixer",
+  "authors": [
+    "jilow"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^2.0.2",
+    "babel-polyfill": "^0.0.1"
+  }
+}

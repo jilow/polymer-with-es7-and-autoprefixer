@@ -1,0 +1,64 @@
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+
+<dom-module id="my-app">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+    </style>
+
+    <slot id="slot"></slot>
+
+    <h3>My App</h3>
+
+    <ul id="items"></ul>
+
+  </template>
+  <script>
+    class MyApp extends Polymer.Element {
+
+      static get is() { 
+        return 'my-app';
+      }
+
+      get time() {
+        return (new Date()).toLocaleTimeString();
+      }
+
+      ready() {
+        super.ready();
+        this.beginWorkflow();
+      }
+
+      /* Develop using ES7 syntax */
+      async beginWorkflow() {
+        let r1 = await this.promise(1000, 'foo');
+        this.addItem(r1);
+        let r2 = await this.promise(2000, 'bar');
+        this.addItem(r2);
+      }
+
+      promise(delay, str) {
+        return new Promise((resolve, reject) => {
+          setTimeout(resolve, delay, str);
+        });
+      }
+
+      addItem(str) {
+        let list = this.$.items;
+        let item = document.createElement('li');
+        item.innerHTML = `[${this.time}] ${str}`;
+        list.appendChild(item);
+      }
+
+    }
+    window.customElements.define(MyApp.is, MyApp);
+  </script>
+</dom-module>
